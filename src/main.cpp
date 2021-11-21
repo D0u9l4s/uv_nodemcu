@@ -13,39 +13,42 @@ void setup()
 void loop()
 {
   Serial.print("Índice UV: ");
+  Serial.print(uv.readUV());
 
   if (uv.readUV() >= 0 && uv.readUV() < 689)
   {
-    Serial.println("Baixo");
+    Serial.println(" Baixo");
   }
   else
 
       if (uv.readUV() >= 690 && uv.readUV() < 1379)
   {
-    Serial.println("Moderado");
+    Serial.println(" Moderado");
   }
   else
 
       if (uv.readUV() >= 1380 && uv.readUV() < 1839)
   {
-    Serial.println("Alto");
+    Serial.println(" Alto");
   }
   else
 
       if (uv.readUV() >= 1839 && uv.readUV() < 2529)
   {
-    Serial.println("Muito Alto");
+    Serial.println(" Muito Alto");
   }
 
   if (uv.readUV() >= 2530 && uv.readUV() < 2760)
   {
-    Serial.println("Extremo");
+    Serial.println(" Extremo");
   }
 
   delay(500);
 }
 
-/*1-230
+/*
+  https://www.vishay.com/docs/84310/designingveml6070.pdf
+  1-230
   2-460
   3-690
   4-920
@@ -55,4 +58,5 @@ void loop()
   8-1840
   9-2070
   10-2300
-  11-2530*/
+  11-2530
+  */
